@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consumo de Agua</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="left-panel">
+      <h2>Consumo de Agua</h2>
+      <form>
+        <label for="fecha">Seleccionar Fecha:</label>
+        <input type="date" id="fecha" name="fecha">
+        <br>
+        <label for="visualizacion">Forma de Visualización:</label>
+        <select id="visualizacion" name="visualizacion">
+          <option value="tabla">Tabla</option>
+          <option value="grafica">Gráfica de Pastel</option>
+        </select>
+        <br>
+        <button type="button" onclick="generarReporte()">Reporte</button>
+      </form>
+    </div>
+    <div class="right-panel">
+      <h2>Visualización</h2>
+      <div id="grafica"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
