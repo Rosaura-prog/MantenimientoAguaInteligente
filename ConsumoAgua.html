@@ -5,8 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Consumo de Agua</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    header {
+      background-color: #1e3a5c;
+      color: #fff;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    header img {
+      margin-right: 10px;
+    }
+    footer {
+      background-color: #1e3a5c;
+      color: #fff;
+      text-align: center;
+      position: fixed;
+      bottom: 20px;
+      left: 0;
+      width: 100%;
+      padding: 10px 0;
+    }
+    footer button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+    footer button:hover {
+      background-color: #0056b3;
+    }
+    footer img {
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <img src="logo.png" alt="Logo" width="50">
+    <h1>Consumo de Agua</h1>
+  </header>
   <div class="container">
     <div class="left-panel">
       <h2>Consumo de Agua</h2>
@@ -28,7 +71,13 @@
       <div id="grafica"></div>
     </div>
   </div>
-
+  <footer>
+    <img src="icono.png" alt="Icono" width="20">
+    <h3>Consumo de Agua</h3>
+    <button>Botón 1</button>
+    <button>Botón 2</button>
+    <button>Botón 3</button>
+  </footer>
   <script src="script.js"></script>
 </body>
 </html>
