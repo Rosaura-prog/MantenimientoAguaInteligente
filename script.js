@@ -77,9 +77,13 @@ function mostrarVentanaEmergente(mensaje) {
 
 // Función para notificar una fuga
 function notificarFuga(fecha) {
-  const mensaje = `Se ha detectado una fuga en un punto de monitoreo. Fecha: ${fecha.toLocaleString()}`;
+  const mensaje = `Se ha detectado una fuga revisa los detalles. Fecha: ${fecha.toLocaleString()}`;
   mostrarVentanaEmergente(mensaje); // Mostramos la ventana emergente con el mensaje de la fuga
+
+  agregarDetalleFugaAlHistorial(fecha);
+
 }
+
 
 // Función para simular una fuga
 function simularFuga() {
@@ -124,3 +128,32 @@ setInterval(function() {
 }, 5000); // Actualizar cada 5 segundos
 
 
+// Función para agregar los detalles de una fuga al historial
+function agregarDetalleFugaAlHistorial(fecha) {
+  const historial = document.getElementById('historial').getElementsByTagName('tbody')[0];
+  // Crear una nueva fila de la tabla
+  const nuevaFila = historial.insertRow();
+  // Insertar celdas en la fila
+  const idTuberia = nuevaFila.insertCell(0);
+  const fechaFuga = nuevaFila.insertCell(1);
+  const horaFuga = nuevaFila.insertCell(2);
+  const estadoFuga = nuevaFila.insertCell(3);
+  const ubicacionFuga = nuevaFila.insertCell(4);
+  // Definir los valores de las celdas
+  idTuberia.textContent = Math.floor(Math.random() * 1000);
+  fechaFuga.textContent = fecha.toLocaleDateString();
+  horaFuga.textContent = fecha.toLocaleTimeString();
+  estadoFuga.textContent = 'Detectado';
+  ubicacionFuga.textContent = generarDireccionAleatoria();
+}
+
+// Función para generar una dirección aleatoria
+function generarDireccionAleatoria() {
+  const calles = ['Calle A', 'Calle B', 'Calle C', 'Calle D', 'Calle E'];
+  const ciudades = ['Ciudad X', 'Ciudad Y', 'Ciudad Z'];
+  const provincia = ['Provincia 1', 'Provincia 2', 'Provincia 3'];
+  const calleAleatoria = calles[Math.floor(Math.random() * calles.length)];
+  const ciudadAleatoria = ciudades[Math.floor(Math.random() * ciudades.length)];
+  const provinciaAleatoria = provincia[Math.floor(Math.random() * provincia.length)];
+  return `${calleAleatoria}, ${ciudadAleatoria}, ${provinciaAleatoria}`;
+}
