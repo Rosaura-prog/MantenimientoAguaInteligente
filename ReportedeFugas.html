@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reporte de Problemas</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
 </head>
 <body>
     <div class="container">
@@ -14,6 +14,14 @@
             <input type="text" id="nombre" name="nombre" required>
             <label for="email">Correo electrónico:</label>
             <input type="email" id="email" name="email" required>
+            <label for="numero_tuberia">Número de Tubería:</label>
+            <select id="numero_tuberia" name="numero_tuberia" required>
+                <option value="">Seleccionar número de tubería</option>
+                <option value="1">Tubería 1</option>
+                <option value="2">Tubería 2</option>
+                <option value="3">Tubería 3</option>
+                <!-- Agrega más opciones según sea necesario -->
+            </select>
             <label for="problema">Descripción del Problema:</label>
             <textarea id="problema" name="problema" rows="6" required></textarea>
             <button type="submit">Enviar Reporte</button>
