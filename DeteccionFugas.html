@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <title>Consumo de Agua</title>
+
+  <link rel="stylesheet" href="style.css">
+  <!-- Se agrega la referencia a Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="Bootstrap" width="30" height="24" >
+      </a>
+    </div>
+    <div>
+
+      <h1>Consumo de Agua</h1>
+
+    </div>
+  </header>
+  
+  <div class="container">
+    <div id="flujoPresion" class="left-panel">
+      <h2>Registro de Flujo y Presión</h2>
+      <form>
+        <label for="flujo">Flujo de Agua:</label>
+        <input type="number" id="flujo" step="0.01"> litros/minuto<br><br>
+        
+        <label for="presion">Presión de Agua:</label>
+        <input type="number" id="presion" step="0.01"> psi<br><br>
+      </form>
+    </div>
+    
+    <div id="consumoDiv" class="right-panel">
+      <h2>Registro de Consumo</h2>
+      <form>
+        <label for="consumo">Consumo de Agua:</label>
+        <input type="number" id="consumo" step="0.01"> litros<br><br>
+      </form>
+      <button onclick="simularDatos()">Simular Datos</button>
+      <button onclick="detectarAnomalias()">Detectar Anomalías</button>
+    </div>
+  </div>
+  
+
+
+
+
+
+
+
+
+  <footer>
+    <div class="footer-column " >
+      <br>
+      <i class="fas fa-lock fa-2x" style="color: rgb(255, 255, 255); font-size: 25px;margin-bottom: 1px;" ></i>
+      <h3 style="margin-top: 7px; font-size: 15px;  ">Aviso de Privacidad</h3>
+  </div>
+
+
+  <div class="footer-column">
+    <i class="bi bi-shield-lock-fill"></i>
+    <h3 style="margin-top: 7px; font-size: 15px;">Sistemas Vanguardistas de México</h3>
+</div>
+
+
+<div class="footer-column " >
+  <br>
+  <i class="fas fa-lock fa-2x" style="color: rgb(255, 255, 255); font-size: 25px;margin-bottom: 1px;" ></i>
+  <h3 style="margin-top: 7px; font-size: 15px;">Términos de Uso</h3>
+</div>
+
+
+  </footer>
+  <script src="script.js"></script>
+
+  
+</body>
+</html>

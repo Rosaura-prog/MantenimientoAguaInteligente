@@ -3,6 +3,8 @@ body {
     margin: 0;
     padding: 0;
   }
+
+ 
   
   .container {
     display: flex;
@@ -10,6 +12,7 @@ body {
     padding: 20px;/*Aquí es para hacer más chico dentro de*/
   
   }
+ 
   
   .left-panel {
     width: 45%;
