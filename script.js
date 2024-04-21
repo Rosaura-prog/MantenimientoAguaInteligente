@@ -67,3 +67,60 @@ function detectarAnomalias() {
         alert("No se detectaron anomalías en el sistema de agua.");
     }
 }
+
+
+//NOTIFICACIONES DE FUGAS
+// Función para mostrar una ventana emergente
+function mostrarVentanaEmergente(mensaje) {
+  alert(mensaje); // Utilizamos la función 'alert' para mostrar la ventana emergente con el mensaje
+}
+
+// Función para notificar una fuga
+function notificarFuga(fecha) {
+  const mensaje = `Se ha detectado una fuga en un punto de monitoreo. Fecha: ${fecha.toLocaleString()}`;
+  mostrarVentanaEmergente(mensaje); // Mostramos la ventana emergente con el mensaje de la fuga
+}
+
+// Función para simular una fuga
+function simularFuga() {
+  const flujo = Math.random() * 10; // Simulación de flujo de agua
+  const presion = Math.random() * 100; // Simulación de presión de agua
+  const consumo = Math.random() * 50; // Simulación de consumo de agua
+  
+  // Definir los valores límite para considerar que los parámetros son anormales
+  const flujoLimiteInferior = 1.5; // L/min
+  const flujoLimiteSuperior = 12; // L/min
+  const presionLimiteInferior = 40; // psi
+  const presionLimiteSuperior = 80; // psi
+  const consumoLimiteInferior = 50; // litros por día
+  const consumoLimiteSuperior = 100; // litros por día
+  
+  // Verificar si alguno de los parámetros está fuera de los límites normales
+  if (flujo < flujoLimiteInferior || flujo > flujoLimiteSuperior ||
+      presion < presionLimiteInferior || presion > presionLimiteSuperior ||
+      consumo < consumoLimiteInferior || consumo > consumoLimiteSuperior) {
+    // Obtener la fecha actual
+    const fechaActual = new Date();
+
+    // Notificar la fuga con la fecha actual
+    notificarFuga(fechaActual);
+  }
+}
+
+// Actualizar automáticamente los valores de los campos cada 5 segundos
+setInterval(function() {
+  // Obtener los valores de los campos
+  const flujo = Math.random() * 10; // Simulación de flujo de agua
+  const presion = Math.random() * 100; // Simulación de presión de agua
+  const consumo = Math.random() * 50; // Simulación de consumo de agua
+
+  // Actualizar los campos
+  document.getElementById('flujo').value = flujo.toFixed(2);
+  document.getElementById('presion').value = presion.toFixed(2);
+  document.getElementById('consumo').value = consumo.toFixed(2);
+
+  // Llamar a la función para simular una fuga
+  simularFuga();
+}, 5000); // Actualizar cada 5 segundos
+
+

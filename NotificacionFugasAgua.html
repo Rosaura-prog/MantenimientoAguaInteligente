@@ -24,52 +24,37 @@
     </div>
     <div>
 
-      <h1>DETECCIÓN DE FUGAS</h1>
+      <h1>NOTIFICACIONES FUGAS</h1>
 
     </div>
   </header>
   
+  
   <div class="container">
-    <div class="left-panel">
-      <div id="flujoPresion">
-        <h2>Registro de Flujo y Presión</h2>
-        <form>
-          <div class="input-container">
-            <label for="flujo">Flujo de Agua:</label>
-            <input type="number" id="flujo" step="0.01"> litros/minuto<br><br>
-          </div>
-          <div class="input-container">
-            <label for="presion">Presión de Agua:</label>
-            <input type="number" id="presion" step="0.01"> psi<br><br>
-          </div>
-        </form>
-      </div>
-      <img src="flujo.png" alt="Imagen 1"> <!-- Imagen después de los inputs -->
+    <div id="flujoPresion">
+      <h2>Registro de Flujo y Presión</h2>
+      <form>
+        <div class="input-container">
+          <label for="flujo">Flujo de Agua:</label>
+          <input type="number" id="flujo" step="0.01"> litros/minuto<br><br>
+        </div>
+        <div class="input-container">
+          <label for="presion">Presión de Agua:</label>
+          <input type="number" id="presion" step="0.01"> psi<br><br>
+        </div>
+      </form>
     </div>
     
-    <div class="right-panel">
-      <div id="consumoDiv">
-        <h2>Registro de Consumo</h2>
-        <form>
-          <div class="input-container">
-            <label for="consumo">Consumo de Agua:</label>
-            <input type="number" id="consumo" step="0.01"> litros<br><br>
-          </div>
-        </form>
-      </div>
-      <img src="consumea.png" alt="Imagen 2"> <!-- Imagen después del input de consumo -->
-      <div class="centered-buttons"> <!-- Div para centrar los botones -->
-        <button onclick="simularDatos()">Actualizar Datos Detectados</button>
-        <button onclick="detectarAnomalias()">Detectar Anomalías</button>
-      </div>
+    <div id="consumoDiv">
+      <h2>Registro de Consumo</h2>
+      <form>
+        <div class="input-container">
+          <label for="consumo">Consumo de Agua:</label>
+          <input type="number" id="consumo" step="0.01"> litros<br><br>
+        </div>
+      </form>
     </div>
   </div>
-
-
-
-
-
-
 
 
 
