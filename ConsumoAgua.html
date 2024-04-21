@@ -3,81 +3,105 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet">
+
   <title>Consumo de Agua</title>
+
   <link rel="stylesheet" href="style.css">
-  <style>
-    header {
-      background-color: #1e3a5c;
-      color: #fff;
-      padding: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    header img {
-      margin-right: 10px;
-    }
-    footer {
-      background-color: #1e3a5c;
-      color: #fff;
-      text-align: center;
-      position: fixed;
-      bottom: 20px;
-      left: 0;
-      width: 100%;
-      padding: 10px 0;
-    }
-    footer button {
-      background-color: #007bff;
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      margin: 0 5px;
-      cursor: pointer;
-    }
-    footer button:hover {
-      background-color: #0056b3;
-    }
-    footer img {
-      vertical-align: middle;
-      margin-right: 5px;
-    }
-  </style>
+  <!-- Se agrega la referencia a Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
   <header>
-    <img src="logo.png" alt="Logo" width="50">
-    <h1>Consumo de Agua</h1>
+    <div class="container">
+      <img src="Imagen/prueba.png"  width="70" height="80">
+      <!-- <a class="navbar-brand" href="#">
+
+         <img src=".png" alt="Bootstrap" width="30" height="24" > -->
+      </a>
+    </div>
+
+    <div>
+
+      <h1>Consumo de Agua</h1>
+
+    </div>
+
   </header>
+  
   <div class="container">
     <div class="left-panel">
       <h2>Consumo de Agua</h2>
+      <br>
       <form>
         <label for="fecha">Seleccionar Fecha:</label>
-        <input type="date" id="fecha" name="fecha">
+        <br>
+        <br>
+        <input type="date" id="fecha" name="fecha" onchange="generarDatos()">
+        <br>
+        <br>
+        <br>
         <br>
         <label for="visualizacion">Forma de Visualización:</label>
-        <select id="visualizacion" name="visualizacion">
+        <br>
+        <br>
+        <select id="visualizacion" name="visualizacion" onchange="mostrarVisualizacion()">
           <option value="tabla">Tabla</option>
           <option value="grafica">Gráfica de Pastel</option>
         </select>
+        <br>
+        <br>
         <br>
         <button type="button" onclick="generarReporte()">Reporte</button>
       </form>
     </div>
     <div class="right-panel">
-      <h2>Visualización</h2>
-      <div id="grafica"></div>
+
+
+      <h2 id="visualizacion-titulo">Visualización</h2>
+
+
+
+        <!-- Aquí se insertará la tabla o la gráfica de pastel -->
+        <div id="grafica" class="centered">
+
+
+        
+
     </div>
   </div>
+
+
+
+
+
   <footer>
-    <img src="icono.png" alt="Icono" width="20">
-    <h3>Consumo de Agua</h3>
-    <button>Botón 1</button>
-    <button>Botón 2</button>
-    <button>Botón 3</button>
+    <div class="footer-column " >
+      <br>
+      <i class="fas fa-lock fa-2x" style="color: rgb(255, 255, 255); font-size: 25px;margin-bottom: 1px;" ></i>
+      <h3 style="margin-top: 25px; font-size: 15px;  ">Aviso de Privacidad</h3>
+  </div>
+
+
+  <div class="footer-column">
+    <br>
+    <i class="bi bi-alarm" style="color: rgb(255, 255, 255); font-size: 25px;margin-bottom: 1px;"></i>
+    <h3 style="margin-top: 25px; font-size: 15px;">Sistemas Vanguardistas de México</h3>
+</div>
+
+
+
+<div class="footer-column " >
+  <br>
+  <i class="fas fa-lock fa-2x" style="color: rgb(255, 255, 255); font-size: 25px;margin-bottom: 1px;" ></i>
+  <h3 style="margin-top: 1px; font-size: 15px;">Términos de Uso</h3>
+</div>
+
+
   </footer>
   <script src="script.js"></script>
+
+  
 </body>
 </html>
