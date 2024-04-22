@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <title>Consumo de Agua</title>
+
+  <link rel="stylesheet" href="style.css">
+  <!-- Se agrega la referencia a Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="aaa.jpg" alt="Bootstrap" width="30" height="24" >
+      </a>
+    </div>
+    <div>
+
+      <h1>DETECCIÓN  DE  FUGAS</h1>
+
+    </div>
+  </header>
+  
+  <div class="container">
+    <div id="flujoPresion">
+      <h2>Registro de Flujo y Presión</h2>
+      <form>
+        <div class="input-container">
+          <label for="flujo">Flujo de Agua:</label>
+          <input type="number" id="flujo" step="0.01"> litros/minuto<br><br>
+          <img src="flujoagua.png" alt="Imagen de Flujo de Agua">
+        </div>
+        <div class="input-container">
+          <label for="presion">Presión de Agua:</label>
+          <input type="number" id="presion" step="0.01"> psi<br><br>
+          <img src="presionnn.png" alt="Imagen de Presión de Agua">
+        </div>
+      </form>
+    </div>
+    
+    <div id="consumoDiv">
+      <h2>Registro de Consumo</h2>
+      <form>
+        <div class="input-container">
+          <label for="consumo">Consumo de Agua:</label>
+          <input type="number" id="consumo" step="0.01"> litros<br><br>
+          <img src="consumea.png" alt="Imagen de Consumo de Agua">
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <h2>Detalles de Fugas</h2>
+  
+  <table id="historial">
+    <thead>
+      <tr>
+        <th>ID Tuberia  </th>
+        <th>Fecha</th>
+        <th>Hora</th>
+        <th>Estado</th>
+        <th>Ubicación</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Aquí se agregarán dinámicamente las filas de la tabla -->
+    </tbody>
+   
+  </table>
+
+
+
+  <footer>
+    <div class="footer-column " >
+      <br>
+      <i class="fas fa-lock fa-2x" style="color: rgb(255, 255, 255); font-size: 25px;margin-bottom: 1px;" ></i>
+      <h3 style="margin-top: 7px; font-size: 15px;  ">Aviso de Privacidad</h3>
+  </div>
+
+
+  <div class="footer-column">
+    <i class="bi bi-shield-lock-fill"></i>
+    <h3 style="margin-top: 7px; font-size: 15px;">Sistemas Vanguardistas de México</h3>
+</div>
+
+
+<div class="footer-column " >
+  <br>
+  <i class="fas fa-lock fa-2x" style="color: rgb(255, 255, 255); font-size: 25px;margin-bottom: 1px;" ></i>
+  <h3 style="margin-top: 7px; font-size: 15px;">Términos de Uso</h3>
+</div>
+
+
+  </footer>
+  <script src="script.js"></script>
+
+  
+</body>
+</html>

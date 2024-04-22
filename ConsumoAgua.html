@@ -3,107 +3,185 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-
-  <title>Consumo de Agua</title>
-
   <link rel="stylesheet" href="style.css">
-  <!-- Se agrega la referencia a Chart.js -->
+
+  <!-- Agregar la biblioteca Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    .centered {
+      text-align: center;
+      margin: auto;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+    }
+
+    .left-panel {
+      background-color: #f2f2f2;
+      padding: 20px;
+      border: 1px solid #ccc;
+      box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+      border-radius: 10px;
+    }
+
+    .right-panel {
+      background-color: #f2f2f2;
+      padding: 20px;
+      border: 1px solid #ccc;
+      box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+      border-radius: 10px;
+      margin-left: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    h2, h3 {
+      font-weight: bold;
+      font-size: 24px;
+    }
+
+    form {
+      text-align: center;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    button {
+      margin-top: 20px;
+      background-color: #000000;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+    }
+
+    button:hover {
+      background-color: #246094;
+    }
+  </style>
 </head>
 <body>
+
   <header>
-    <div class="container">
-      <img src="Imagen/prueba.png"  width="70" height="80">
-      <!-- <a class="navbar-brand" href="#">
-
-         <img src=".png" alt="Bootstrap" width="30" height="24" > -->
-      </a>
-    </div>
-
-    <div>
-
-      <h1>Consumo de Agua</h1>
-
-    </div>
-
+    <img src="Imagen/prueba.png"  width="80" height="90">
+    <h1>Consumo de Agua</h1>
   </header>
-  
+
   <div class="container">
     <div class="left-panel">
-      <h2>Consumo de Agua</h2>
-      <br>
+      <h2 class="centered" style="font-size: 30px;">Consumo de Agua</h2>
       <form>
-        <label for="fecha">Seleccionar Fecha:</label>
-        <br>
-        <br>
-        <input type="date" id="fecha" name="fecha" onchange="generarDatos()">
-        <br>
-        <br>
-        <br>
-        <br>
-        <label for="visualizacion">Forma de Visualización:</label>
-        <br>
-        <br>
-        <select id="visualizacion" name="visualizacion" onchange="mostrarVisualizacion()">
-          <option value="tabla">Tabla</option>
-          <option value="grafica">Gráfica de Pastel</option>
-        </select>
-        <br>
-        <br>
-        <br>
-        <button type="button" onclick="generarReporte()">Reporte</button>
+        <br><br><br><br>
+        <label for="fecha" style="font-size: 20px;"><b>Seleccionar Fecha:</b></label><br><br>
+        <input style="font-size: 18px;" type="date" id="fecha" name="fecha" onchange="generarDatos()"><br><br><br><br><br>
+        <label for="visualizacion" style="font-size: 20px;"><b>Forma de Visualización:</b></label><br><br>
+        <select style="font-size: 18px;" id="visualizacion" name="visualizacion" onchange="mostrarVisualizacion()">
+          <option value="tabla" style="font-size: 18px;">Tabla</option>
+          <option value="grafica" style="font-size: 18px;">Gráfica de Pastel</option>
+        </select><br><br><br><br><br>
+        <button style="font-size: 20px;" type="button" onclick="generarReporte()">Reporte</button>
       </form>
     </div>
+
     <div class="right-panel">
-
-
-      <h2 id="visualizacion-titulo">Visualización</h2>
-
-
-
-        <!-- Aquí se insertará la tabla o la gráfica de pastel -->
-        <div id="grafica" class="centered">
-
-
-        
-
+      <h3 id="visualizacion-titulo" class="centered" style="font-size: 30px; margin-bottom: 10px;">Visualización</h3>
+      <div id="grafica" class="centered" style="margin-top: 100px;"></div>
     </div>
   </div>
 
-
-
-
-
   <footer>
-    <div class="footer-column " >
+    <div class="footer-column">
       <br>
-      <i class="fas fa-lock fa-2x" style="color: rgb(255, 255, 255); font-size: 25px;margin-bottom: 1px;" ></i>
-      <h3 style="margin-top: 25px; font-size: 15px;  ">Aviso de Privacidad</h3>
-  </div>
+      <i class="fas fa-lock fa-2x" style="color: rgb(255, 255, 255); font-size: 25px;margin-bottom: 1px;"></i>
+      <h3 style="margin-top: 25px; font-size: 15px;">Aviso de Privacidad</h3>
+    </div>
 
+    <div class="footer-column">
+      <br>
+      <i class="bi bi-globe-americas" style="color: rgb(255, 255, 255); font-size: 28px;margin-bottom: 1px;"></i>
+      <h3 style="margin-top: 15px; font-size: 15px;">Sistemas Vanguardistas de México</h3>
+    </div>
 
-  <div class="footer-column">
-    <br>
-    <i class="bi bi-alarm" style="color: rgb(255, 255, 255); font-size: 25px;margin-bottom: 1px;"></i>
-    <h3 style="margin-top: 25px; font-size: 15px;">Sistemas Vanguardistas de México</h3>
-</div>
-
-
-
-<div class="footer-column " >
-  <br>
-  <i class="fas fa-lock fa-2x" style="color: rgb(255, 255, 255); font-size: 25px;margin-bottom: 1px;" ></i>
-  <h3 style="margin-top: 1px; font-size: 15px;">Términos de Uso</h3>
-</div>
-
-
+    <div class="footer-column">
+      <br>
+      <i class="bi bi-list-columns" style="color: rgb(255, 255, 255); font-size: 28px;margin-bottom: 1px;"></i>
+      <h3 style="margin-top: 15px; font-size: 15px;">Términos de Uso</h3>
+    </div>
   </footer>
-  <script src="script.js"></script>
 
-  
+  <script>
+    function mostrarVisualizacion() {
+      var visualizacion = document.getElementById("visualizacion").value;
+      var visualizacionTitulo = document.getElementById("visualizacion-titulo");
+      var grafica = document.getElementById("grafica");
+
+      if (visualizacion === "tabla") {
+        visualizacionTitulo.textContent = "Visualización - Tabla";
+        // Mostrar la tabla con datos aleatorios
+        
+        var tablaHTML = "<table><tr><th colspan='5'  style='text-align: center;'>Tabla sobre el resumen de uso</th></tr><tr><th>Hora</th><th>Cantidad (litros)</th><th>Tipo de Consumo</th><th>Fuente de Agua</th><th>Eficiencia de Uso</th></tr>";
+        for (var hora = 4; hora <= 24; hora += 2) {
+          var cantidad = Math.floor(Math.random() * 15) + 1; // Generar cantidad aleatoria entre 1 y 15 litros
+          var tipoConsumo = "Domestico";
+          var fuenteAgua = "Red Pública";
+          var eficienciaUso = Math.random() < 0.5 ? "Eficiente" : "Ineficiente"; // Generar eficiencia aleatoria
+          tablaHTML += "<tr><td>" + hora + ":00</td><td>" + cantidad + "</td><td>" + tipoConsumo + "</td><td>" + fuenteAgua + "</td><td>" + eficienciaUso + "</td></tr>";
+        }
+        tablaHTML += "</table>";
+        grafica.innerHTML = tablaHTML;
+      } else if (visualizacion === "grafica") {
+        visualizacionTitulo.textContent = "Visualización - Gráfica de Pastel";
+        
+        // Mostrar la gráfica de pastel con datos de consumo por hora
+        grafica.innerHTML = '<canvas id="myPieChart"></canvas>';
+        var ctx = document.getElementById('myPieChart').getContext('2d');
+        var myPieChart = new Chart(ctx, {
+          type: 'pie',
+          data: {
+            labels: ['4 AM', '6 AM', '8 AM', '10 AM', '12 PM', '2 PM', '4 PM', '6 PM', '8 PM', '10 PM', '12 AM'],
+            datasets: [{
+              data: generarDatosPorHora(),
+              backgroundColor: ['#ff6384', '#36a2eb', '#ffce56', '#4bc0c0', '#9966ff', '#ff6600', '#33cc33', '#666699', '#ffcc00', '#993366', '#009999']
+            }]
+          },
+          options: {
+            legend: {
+              display: true,
+              position: 'bottom'
+            },
+            responsive: false, // Desactiva la respuesta al tamaño de la ventana
+            maintainAspectRatio: false, // No mantiene el aspect ratio
+            width: 550, // Ancho personalizado
+            height: 550 // Altura personalizada
+          }
+        });
+      }
+    }
+
+    // Función para generar datos de consumo de agua por hora
+    function generarDatosPorHora() {
+      var datos = [];
+      for (var hora = 4; hora <= 24; hora += 2) {
+        // Generar cantidad aleatoria entre 1 y 15 litros por hora
+        datos.push(Math.floor(Math.random() * 15) + 1);
+      }
+      return datos;
+    }
+</script>
+
+
 </body>
 </html>
