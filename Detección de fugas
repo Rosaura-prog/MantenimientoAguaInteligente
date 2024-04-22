@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #cbe8e8; /* Color de fondo tipo agua */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #80D7F3; /* Color de fondo del encabezado */
+            color: #000000; /* Color del texto */
+            padding: 10px; /* Espaciado interno */
+            text-align: center;
+            display: flex; /* Activa el modelo de caja flexible */
+            justify-content: space-between; /* Distribuye los elementos a lo largo del eje principal */
+            align-items: center; /* Centra los elementos verticalmente */
+        }
+
+        header img {
+            max-width: 100px; /* Ajusta el ancho máximo de las imágenes */
+            height: auto; /* Permite que la altura se ajuste automáticamente */
+            margin: 0 10px; /* Espaciado entre las imágenes */
+        }
+
+        #logo {
+            flex: 1; /* Hace que el logo ocupe todo el espacio posible */
+        }
+
+        #details-container {
+            width: 50%;
+            padding: 20px;
+            border: 2px solid #80D7F3; /* Borde con color del encabezado */
+            border-radius: 10px; /* Borde redondeado */
+            background-color: #fff;
+            text-align: left;
+            margin: 20px auto; /* Centra el formulario */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        }
+
+        .input-group {
+            margin-bottom: 10px;
+        }
+
+        .input-group label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: calc(100% - 24px); /* Ajusta el ancho del input para compensar el padding */
+            padding: 8px;
+            border: 1px solid #ddd; /* Borde suave */
+            border-radius: 5px; /* Borde redondeado */
+        }
+
+        #regresar-button {
+            background-color: #80AEF3; /* Color de fondo del botón */
+            color: #fff; /* Color del texto del botón */
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            width: 100%; /* Ajusta el ancho al 100% */
+            border-radius: 5px; /* Borde redondeado */
+            transition: background-color 0.3s ease; /* Transición suave */
+        }
+
+        #regresar-button:hover {
+            background-color: #6097d6; /* Cambia el color al pasar el mouse */
+        }
+
+        footer {
+            background-color: #80D7F3; /* Color de fondo del pie de página */
+            color: #000000; /* Color del texto */
+            padding: 10px; /* Espaciado interno */
+            text-align: center;
+            display: flex; /* Activa el modelo de caja flexible */
+            justify-content: space-between; /* Distribuye los elementos a lo largo del eje principal */
+            align-items: center; /* Centra los elementos verticalmente */
+            margin-top: auto;
+        }
+
+        footer img {
+            max-width: 80px; /* Ajusta el ancho máximo de los logos en el pie de página */
+            height: auto; /* Permite que la altura se ajuste automáticamente */
+            margin: 0 10px; /* Espaciado entre las imágenes */
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="./recursos/imagenes/conagua.png" alt="Imagen Izquierda">
+    <div id="logo">
+        <h1>Agua Inteligente</h1>
+    </div>
+    <img id="imagen-derecha" src="./recursos/imagenes/web.png" alt="Imagen Derecha">
+</header>
+
+<div id="details-container">
+    <h2>Detalles de la fuga</h2>
+    <div class="input-group">
+        <label for="idTuberia">ID TUBERIA:</label>
+        <input type="text" id="idTuberia" placeholder="Ingrese ID TUBERIA">
+    </div>
+    <div class="input-group">
+        <label for="fecha">Fecha:</label>
+        <input type="text" id="fecha" placeholder="Ingrese Fecha">
+    </div>
+    <div class="input-group">
+        <label for="hora">Hora:</label>
+        <input type="text" id="hora" placeholder="Ingrese Hora">
+    </div>
+    <div class="input-group">
+        <label for="estado">Estado:</label>
+        <input type="text" id="estado" placeholder="Ingrese Estado">
+    </div>
+    <div class="input-group">
+        <label for="ubicacion">Ubicacion:</label>
+        <input type="text" id="ubicacion" placeholder="Ingrese Ubicacion">
+    </div>
+    <button id="regresar-button" onclick="window.location.href = 'fugasDetect.html';">Regresar</button>
+</div>
+
+<footer>
+    <div id="aviso-logo">
+        <img src="./recursos/imagenes/av.png" alt="Aviso Logo">
+    </div>
+    <div id="aviso-texto">
+        Aviso de privacidad
+    </div>
+    <div id="sistemas-logo">
+        <img src="./recursos/imagenes/Log.png" alt="Sistemas Logo">
+    </div>
+    <div id="sistemas-texto">
+        Sistemas Vanguardistas de México
+    </div>
+    <div id="terminos-logo">
+        <img src="./recursos/imagenes/te.png" alt="Términos Logo">
+    </div>
+    <div id="terminos-texto">
+        Términos de uso
+    </div>
+</footer>
+
+</body>
+</html>
